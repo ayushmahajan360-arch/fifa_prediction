@@ -18,7 +18,7 @@ On Vercel, make sure both environment variables are added for the **Production**
 - `SUPABASE_URL`
 - `SUPABASE_SECRET_KEY`
 
-If you ran the older version of this project’s schema, run `supabase-migration-v2.sql` once instead to update your existing table.
+If you already launched an older version, run `supabase-migration-v3.sql` once instead. This creates the new clean `competition_entries` table and preserves any earlier test data in `predictions`.
 
 Entries close on **14 July 2026, 23:59:59 India Standard Time**. Update `DEADLINE` in both `app.js` and `api/submit.js` if the campaign date changes.
 
@@ -28,4 +28,4 @@ Edit the four team names and flag emoji in `index.html`, then update the matchin
 
 ## Reading entries
 
-Open the `predictions` table in Supabase and use its CSV export. Only your server key can access this data; visitors cannot read the table.
+Open the `competition_entries` table in Supabase and use its CSV export. Only your server key can access this data; visitors cannot read the table.
