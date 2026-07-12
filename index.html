@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#092c64" /><title>The Final Call | World Cup Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stadium-lights"></div><div class="grain"></div>
+  <main class="page">
+    <nav><a class="logo" href="#top"><span class="logo-mark">26</span><span>THE FINAL<br><b>CALL</b></span></a><div id="deadline-chip" class="deadline"><i></i> ENTRY CLOSES · 14 JULY · 23:59 IST</div></nav>
+    <section id="top" class="masthead">
+      <div class="host-tag"><span></span> WORLD CUP PREDICTOR</div>
+      <h1>THE TROPHY<br>IS <em>CALLING.</em></h1>
+      <p>Pick every twist in the road to the final. One prediction. Total bragging rights.</p>
+      <div class="stadium"><div class="crowd"></div><div class="pitch"><span class="circle"></span><span class="line"></span></div><div class="cup">🏆</div></div>
+    </section>
+    <section class="prize-banner" aria-label="Campaign prize"><div class="prize-icon">₹</div><div><span>THE PERFECT PREDICTION PRIZE</span><strong>WIN ₹5,000</strong><small>Make every prediction right to win · Prize sponsored by K.K. Ahmed Kutty</small></div><div class="prize-star">✦</div></section>
+    <section class="prediction-wrap">
+      <aside class="progress"><div class="progress-item active"><b>01</b><span>YOUR<br>DETAILS</span></div><div class="progress-item"><b>02</b><span>SEMI<br>FINALS</span></div><div class="progress-item"><b>03</b><span>THE<br>FINAL</span></div><div class="progress-item"><b>04</b><span>GOLDEN<br>MOMENT</span></div></aside>
+      <div class="card">
+        <form id="prediction-form" novalidate>
+          <section class="panel active" data-panel="0"><span class="round">ROUND 01 / 04</span><h2>Get on the<br><em>scoresheet.</em></h2><p class="lede">Enter your details to start your official prediction.</p>
+            <div class="fields"><label>FIRST NAME<input name="firstName" autocomplete="given-name" placeholder="First name" required></label><label>LAST NAME<input name="lastName" autocomplete="family-name" placeholder="Last name" required></label></div>
+            <label>MOBILE NUMBER<input name="mobile" autocomplete="tel" inputmode="numeric" placeholder="+91 00000 00000" required></label>
+            <label class="consent"><input type="checkbox" name="consent" required><span></span>I agree to my prediction and contact details being securely stored for this campaign.</label><button class="next" type="button">KICK OFF <b>→</b></button>
+          </section>
+          <section class="panel" data-panel="1"><span class="round">ROUND 02 / 04</span><h2>Who reaches<br><em>the final?</em></h2><p class="lede">Tap the flag you believe will go all the way.</p>
+            <div class="fixture"><div class="fixture-top"><span>SEMI FINAL 01</span><b>PICK A WINNER</b></div><div class="flag-picks"><label class="flag-card"><input type="radio" name="semiOne" value="Argentina" required><img class="flag-art" src="https://flagcdn.com/w160/ar.png" alt="Argentina flag"><strong>ARGENTINA</strong><small>LA ALBICELESTE</small><i>✓</i></label><span class="versus">VS</span><label class="flag-card"><input type="radio" name="semiOne" value="England"><img class="flag-art" src="https://flagcdn.com/w160/gb-eng.png" alt="England flag"><strong>ENGLAND</strong><small>THE THREE LIONS</small><i>✓</i></label></div></div>
+            <div class="fixture"><div class="fixture-top"><span>SEMI FINAL 02</span><b>PICK A WINNER</b></div><div class="flag-picks"><label class="flag-card"><input type="radio" name="semiTwo" value="Spain" required><img class="flag-art" src="https://flagcdn.com/w160/es.png" alt="Spain flag"><strong>SPAIN</strong><small>LA ROJA</small><i>✓</i></label><span class="versus">VS</span><label class="flag-card"><input type="radio" name="semiTwo" value="France"><img class="flag-art" src="https://flagcdn.com/w160/fr.png" alt="France flag"><strong>FRANCE</strong><small>LES BLEUS</small><i>✓</i></label></div></div>
+            <div class="actions"><button class="back" type="button">← BACK</button><button class="next" type="button">CONTINUE <b>→</b></button></div>
+          </section>
+          <section class="panel" data-panel="2"><span class="round">ROUND 03 / 04</span><h2>Make the<br><em>final call.</em></h2><p class="lede">Set the score, then pick how the final ends.</p><div id="final-match" class="final-match"></div><div class="result-title">AFTER 90 MINUTES, THE RESULT IS…</div><div id="result-options" class="result-options"></div><div id="penalties" class="penalty-box hidden"><span>THE MATCH GOES TO PENALTIES</span><p>Who wins the shoot-out?</p><div id="penalty-options"></div></div><div class="actions"><button class="back" type="button">← BACK</button><button class="next" type="button">ONE LAST PICK <b>→</b></button></div></section>
+          <section class="panel" data-panel="3"><span class="round">ROUND 04 / 04</span><h2>The golden<br><em>moments.</em></h2><p class="lede">The tie-breakers that set a champion apart.</p><label id="first-goal-question">WHO SCORES FIRST?<input name="firstGoalscorer" placeholder="Type player name" required></label><label>WHO IS MAN OF THE MATCH?<input name="manOfMatch" placeholder="Type player name" required></label><label>WHO WINS THE GOLDEN BOOT?<select name="goldenBoot" required><option value="" selected disabled>Choose a contender</option><option>Lionel Messi</option><option>Kylian Mbappé</option><option>Erling Haaland</option><option>Harry Kane</option><option>Ousmane Dembélé</option><option>Mikel Oyarzabal</option><option>Vinícius Júnior</option></select></label><div class="golden-list"><span>7 CURRENT CONTENDERS</span><div>MESSI · MBAPPÉ · HAALAND · KANE<br>DEMBÉLÉ · OYARZABAL · VINÍCIUS JR</div></div><div class="actions"><button class="back" type="button">← BACK</button><button class="submit" type="submit">LOCK MY PICKS <b>✦</b></button></div></section>
+        </form>
+        <section id="success" class="success hidden"><div class="seal">✓</div><span class="round">PREDICTION RECEIVED</span><h2>You’re<br><em>in the game.</em></h2><p><span id="winner-name"></span>, your prediction is locked in. Now let the football do the talking.</p><div class="success-prize">PERFECT PICKS COULD WIN YOU <b>₹5,000</b><small>Sponsored by K.K. Ahmed Kutty</small></div><div class="ticket"><small>THE FINAL CALL · 2026</small><b id="entry-id">ENTRY CONFIRMED</b><small>ONE GAME · ONE GLORY</small></div></section>
+        <section id="closed" class="success hidden"><div class="seal">⌁</div><span class="round">FULL TIME</span><h2>Entries are<br><em>closed.</em></h2><p>The final whistle has blown on predictions. Thanks for playing.</p></section>
+      </div>
+    </section><footer>THE FINAL CALL <span>✦</span> WORLD CUP PREDICTOR 2026</footer>
+  </main><div id="toast" role="alert" aria-live="polite"></div><script src="app.js"></script>
+</body></html>
