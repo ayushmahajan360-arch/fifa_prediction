@@ -18,7 +18,7 @@ On Vercel, make sure both environment variables are added for the **Production**
 - `SUPABASE_URL`
 - `SUPABASE_SECRET_KEY`
 
-If you already launched an older version, run `supabase-migration-v3.sql` once instead. This creates the new clean `competition_entries` table and preserves any earlier test data in `predictions`.
+If you have not yet created `competition_entries`, run `supabase-migration-v3.sql`. If you already ran that migration, run `supabase-migration-v4.sql` once to remove the email field and add the device lock column.
 
 Entries close on **14 July 2026, 23:59:59 India Standard Time**. Update `DEADLINE` in both `app.js` and `api/submit.js` if the campaign date changes.
 
